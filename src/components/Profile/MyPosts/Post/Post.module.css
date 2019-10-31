@@ -1,0 +1,12 @@
+div .item {
+   border: 1px solid white;
+}
+
+.item {
+   color: aquamarine;
+}
+
+.item img {
+   width: 70px;
+   border-radius: 35px;
+}
