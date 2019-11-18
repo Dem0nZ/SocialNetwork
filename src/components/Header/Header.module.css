@@ -1,6 +1,7 @@
 .header {
   grid-area: h;
-  background-color: green;
+  background-color: gainsboro;
+  margin-bottom: 10px;
 }
 
 .header img {

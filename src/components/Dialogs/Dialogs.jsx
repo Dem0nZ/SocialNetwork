@@ -1,39 +1,41 @@
 import React from 'react';
 import classes from './Dialogs.module.css';
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+
+    let dialogs = [
+        {id: 1, name: 'MaxPes'},
+        {id: 2, name: 'Pavelexus'},
+        {id: 3, name: 'Kalem'},
+        {id: 4, name: 'Sanek'},
+        {id: 5, name: 'Luxur'},
+        {id: 6, name: 'BatulinS'},
+    ]
+
+
+    let dialogsElements = dialogs.map( d => <DialogItem name={d.name} id={d.id}/> );
+
+
+    let messages = [
+        {id: 1, message: 'Hi.'},
+        {id: 2, message: 'How are you?'},
+        {id: 3, message: 'pepegaaaa'},
+        {id: 4, message: 'I don\'t know'},
+        {id: 5, message: 'YoYo'},
+        {id: 6, message: 'psina lohmataya'},
+    ]
+
+    let messagesElements = messages.map( m => <Message message={m.message}/> );
+
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
-                <div className={classes.dialog + ' ' + classes.active}>
-                    MaxPes
-                </div>
-                <div className={classes.dialog}>
-                    Pavelexus
-                </div>
-                <div className={classes.dialog}>
-                    Kalem
-                </div>
-                <div className={classes.dialog}>
-                    Sanek
-                </div>
-                <div className={classes.dialog}>
-                    Luxur
-                </div>
-                <div className={classes.dialog}>
-                    BatulinS
-                </div>
+                {dialogsElements}
             </div>
             <div className={classes.messages}>
-                <div className={classes.message}>
-                    Hi!
-                </div>
-                <div className={classes.message}>
-                    How Are you?
-                </div>
-                <div className={classes.message}>
-                    DHDHDHD!!!
-                </div>
+                {messagesElements}
             </div>
         </div>
     )

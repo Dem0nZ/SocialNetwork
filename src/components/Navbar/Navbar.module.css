@@ -1,14 +1,24 @@
 .nav {
   grid-area: n;
-  background-color: chocolate;
   padding: 20px;
+  margin-right: 10px;
+  background-color: gainsboro;
 }
 
 .item a {
-  color: white;
+  color: green;
+  margin-left: auto;
   text-decoration: none;
+  transition: all 0.3s ease;
+  padding-left: 9px;
+}
+
+.item a:hover {
+  font-size: 20px;
+  border-left: 2px solid green;
 }
 
 .item a.active {
-  color: gold;
+  color: darkgoldenrod;
+  border-left: 2px solid darkgoldenrod;
 }
