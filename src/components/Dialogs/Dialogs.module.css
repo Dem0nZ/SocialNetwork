@@ -12,9 +12,27 @@
 }
 
 .dialog {
+    display: flex;
+    align-items: center;
+}
 
+.myDialog {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 .messages {
     padding: 10px;
+
+}
+
+.chats img{
+    height: 40px;
+    border-radius: 20px;
+}
+
+.messages, .myDialog img, .dialog img {
+    height: 40px;
+    border-radius: 20px;
 }

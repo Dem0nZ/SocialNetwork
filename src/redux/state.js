@@ -8,13 +8,14 @@ let state = {
         ]
     },
     dialogsPage: {
+        userId: 1,
         messages: [
-            {id: 1, message: 'Hi.'},
-            {id: 2, message: 'How are you?'},
-            {id: 3, message: 'pepegaaaa'},
-            {id: 4, message: 'I don\'t know'},
-            {id: 5, message: 'YoYo'},
-            {id: 6, message: 'psina lohmataya'}
+            {id: 1, userId: 1, message: 'Hi.'},
+            {id: 2, userId: 2, message: 'How are you?'},
+            {id: 3, userId: 1, message: 'pepegaaaa'},
+            {id: 4, userId: 1, message: 'I don\'t know'},
+            {id: 5, userId: 2, message: 'YoYo'},
+            {id: 6, userId: 2, message: 'psina lohmataya'}
         ],
         dialogs: [
             {id: 1, name: 'MaxPes'},
