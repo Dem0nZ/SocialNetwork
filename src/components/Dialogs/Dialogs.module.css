@@ -1,6 +1,7 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+
 }
 
 .dialogsItems {
@@ -35,4 +36,8 @@
 .messages, .myDialog img, .dialog img {
     height: 40px;
     border-radius: 20px;
+}
+
+.addMessage {
+    display: flex;
 }
