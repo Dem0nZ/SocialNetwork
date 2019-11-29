@@ -1,7 +1,6 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
-
 }
 
 .dialogsItems {
@@ -12,44 +11,10 @@
     color: gold;
 }
 
-.dialogsItems a {
-    text-decoration: unset;
-    color: green;
-}
-
 .dialog {
-    display: flex;
-    align-items: center;
-}
 
-.myDialog {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
 }
 
 .messages {
     padding: 10px;
-
-}
-
-.chats img{
-    height: 40px;
-    border-radius: 20px;
-}
-
-.chats {
-    background-color: rgba(189, 189, 189, 0.91);
-    margin-top: 3px;
-    display: flex;
-    align-items: center;
-}
-
-.myDialog img, .dialog img {
-    height: 40px;
-    border-radius: 20px;
-}
-
-.addMessage {
-
 }
