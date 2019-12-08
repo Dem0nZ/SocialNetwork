@@ -19,6 +19,5 @@ const MyPostsContainer = (props) => {
                       posts={state.profilePage.posts} newPostText={state.profilePage.newPostText}/>)
 }
 
-
 export default MyPostsContainer;
 
