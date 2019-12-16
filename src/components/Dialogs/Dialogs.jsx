@@ -5,7 +5,6 @@ import Message from "./Message/Message";
 
 
 const Dialogs = (props) => {
-    debugger;
     let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = props.messages.map(m => <Message message={m.message} isCurrentUser={m.userId === props.userId}/>);
     let textMessage = React.createRef();
