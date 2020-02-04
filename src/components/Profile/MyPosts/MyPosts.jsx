@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 
 const MyPosts = (props) => {
-
     let postElements = props.posts.map(p => <Post message={p.message} likeCounts={p.likeCounts}/>);
 
     let newPostElement = React.createRef();

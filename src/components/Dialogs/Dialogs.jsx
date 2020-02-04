@@ -5,19 +5,20 @@ import Message from "./Message/Message";
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = props.messages.map(m => <Message message={m.message} isCurrentUser={m.userId === props.userId}/>);
-    let textMessage = React.createRef();
+    let state = props.dialogsPage;
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>);
+    let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} isCurrentUser={m.userId === props.userId}/>);
+    let newDialogText = state.newDialogText;
 
     let addMessage = () => {
-        if (textMessage.current.value) {
+        if (newDialogText){
             props.addMessage();
         }
 
     }
 
-    let onMessageChange = () => {
-        let text = textMessage.current.value;
+    let onMessageChange = (e) => {
+        let text = e.target.value;
         props.updateNewMessage(text);
     }
 
@@ -29,7 +30,7 @@ const Dialogs = (props) => {
                 <div className={classes.messages}>
                     {messagesElements}
                     </div>
-                    <div><textarea placeholder='Введите сообщение' ref={textMessage} value={props.newDialogText}
+                    <div><textarea placeholder='Введите сообщение' value={newDialogText}
                                    onChange={onMessageChange}/></div>
                     <div>
                         <button onClick={addMessage}>Message</button>
