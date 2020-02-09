@@ -1,16 +1,14 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_USERS = 'SET_TOTAL_USERS';
 
 let initialState = {
-    users: [/*
-        {id:1, followed: true, avatar: 'https://placeit-assets1.s3-accelerate.amazonaws.com/custom-pages/avatar-maker/twitch-avatar-maker-for-a-gaming-channel-1458c.png',
-            fullName: 'Aleksey', status: 'I\'m in your mind', location: {city: 'St.Petersburg', country: 'Russia'}  },
-        {id:1, followed: false, avatar: 'https://placeit-assets1.s3-accelerate.amazonaws.com/custom-pages/avatar-maker/twitch-avatar-maker-for-a-gaming-channel-1458c.png',
-            fullName: 'Iliya', status: 'The best in all', location: {city: 'Orel', country: 'Russia'}  },
-        {id:1, followed: true, avatar: 'https://placeit-assets1.s3-accelerate.amazonaws.com/custom-pages/avatar-maker/twitch-avatar-maker-for-a-gaming-channel-1458c.png',
-            fullName: 'Misha K.', status: 'Do you listen me?', location: {city: 'Minsk', country: 'Belarus'}  },
-    */]
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1
 };
 
 
@@ -37,7 +35,11 @@ const userReducer = (state = initialState, action) => {
                 })
             }
         case SET_USERS:
-            return {...state, users: [...state.users, ...action.users]}
+            return {...state, users: action.users}
+        case SET_CURRENT_PAGE:
+            return {...state, currentPage: action.currentPage}
+        case SET_TOTAL_USERS:
+            return {...state, totalUsersCount: action.totalUsers}
         default:
             return state;
 
@@ -48,5 +50,7 @@ const userReducer = (state = initialState, action) => {
 export const followActionCreator = (userId) => ({type: FOLLOW, userId})
 export const unfollowActionCreator = (userId) => ({type:UNFOLLOW, userId})
 export const setUsersActionCreator = (users) => ({type: SET_USERS, users})
+export const setCurrentPageActionCreator = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const setTotalUsersActionCreator = (totalUsers) => ({type: SET_TOTAL_USERS, totalUsers})
 
 export default userReducer;
