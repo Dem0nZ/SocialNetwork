@@ -3,7 +3,7 @@ import preloader from '../../../assets/images/Spinner-1s-200px.svg';
 
 let Preloader = (props) => {
     return <div>
-        <img src={preloader}/>
+        <img alt='' src={preloader}/>
         </div>
         }
 
