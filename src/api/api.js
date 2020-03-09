@@ -18,4 +18,16 @@ export const usersAPI = {
     }
 }
 
+export const authAPI = {
+    authMe() {
+        return instance.get(`auth/me`).then(response => response.data);
+    }
+}
+
+export const profileAPI = {
+    getUserInfo(userId) {
+        return instance.get(`auth/profile/${userId}`).then(response => response.data);
+    }
+
+
 
