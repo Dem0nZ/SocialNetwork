@@ -26,7 +26,7 @@ export const authAPI = {
 
 export const profileAPI = {
     getUserInfo(userId) {
-        return instance.get(`auth/profile/${userId}`).then(response => response.data);
+        return instance.get(`profile/${userId}`).then(response => response.data);
     }
 }
 
