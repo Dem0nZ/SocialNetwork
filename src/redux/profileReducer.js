@@ -19,7 +19,6 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_STATUS: {
-            debugger
             return {
                 ...state,
                 status: action.status
@@ -75,7 +74,6 @@ export const getStatus = (userId) => (dispatch) => {
 export const updateStatus = (status) => (dispatch) => {
     profileAPI.updateStatus(status)
         .then(response => {
-            debugger
             if (response.resultCode === 0) {
                 dispatch(setStatus(status));
             }
